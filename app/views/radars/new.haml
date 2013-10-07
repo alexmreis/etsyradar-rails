@@ -1,0 +1,13 @@
+%h2 New Radar
+=form_for(@radar, :html => {:role => 'form', :class => 'form'}) do |f| 
+  .form-group
+    %label{:for => 'radar_etsy_url'} Etsy URL
+    = f.text_field :etsy_url, :class => 'form-control'
+    = f.hidden_field :user_id
+
+  .form-group
+    %label{:for => 'radar_filter'} Filter
+    = f.text_field :filter, :class => 'form-control'
+
+  %input.btn.btn-primary{:type => 'submit', :value => 'Save'}
+

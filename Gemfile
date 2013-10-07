@@ -38,6 +38,19 @@ gem 'omniauth'
 gem 'omniauth-etsy'
 
 gem 'haml'
+gem 'haml-rails'
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :github => 'anjlab/bootstrap-rails'
+gem 'haml_coffee_assets'
+gem 'underscore-rails'
+
+gem 'etsy'
+gem 'pony'
+group :assets do
+  gem 'eco'
+  gem 'execjs'
+end
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

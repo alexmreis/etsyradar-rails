@@ -1,0 +1,22 @@
+%h2 Your Radars
+%table.table.table-striped
+  %thead
+    %tr
+      %th Store
+      %th Filter
+      %th Last Products Seen
+      %th Last Update
+      %th Actions
+
+  %tbody
+    - @radars.each do |radar|
+      %tr
+        %td=radar.store_name
+        %td=radar.filter
+        %td=radar.last_items ? radar.last_items.join(",") : 'Not polled yet'
+        %td=radar.updated_at.to_s
+        %td
+          = link_to('<span class="glyphicon glyphicon-trash"></span>'.html_safe, radar_path(radar), :method => :delete)
+          = link_to('<span class="glyphicon glyphicon-refresh"></span>'.html_safe, poll_radar_path(radar), :method => :post)
+.pull-right
+  %a.btn.btn-primary{:href => new_radar_path} New Radar
