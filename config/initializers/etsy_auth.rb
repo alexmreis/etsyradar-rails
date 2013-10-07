@@ -3,7 +3,7 @@ ENV['ETSY_SECRET'] ||= 'qpgy9v8vp'
 
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :etsy, ENV['ETSY_TOKEN'], ENV['ETSY_SECRET']
-  provider :developer if Rails.env.development?
+  provider :developer
 end
 
 Etsy.environment = :production
