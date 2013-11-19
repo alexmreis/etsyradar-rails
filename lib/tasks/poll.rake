@@ -3,6 +3,7 @@ namespace :radar do
   task :poll => :environment do
     Radar.all.each do |radar|
       radar.poll
+      sleep 1
     end
   end
 end

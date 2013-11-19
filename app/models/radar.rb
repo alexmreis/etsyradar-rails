@@ -10,7 +10,9 @@ class Radar < ActiveRecord::Base
     self.last_items ||= []
 
     shop = Etsy::Shop.find(shop_id)
+    sleep 1 #Respect etsy rate limits
     listings = shop.listings(:active)
+    sleep 1 #Respect etsy rate limits
     item_names = listings.map(&:title).sort
     diff = item_names - self.last_items
 
